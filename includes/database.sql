@@ -1,5 +1,3 @@
--- Hati-hati: Perintah DROP TABLE akan menghapus semua data yang ada di tabel tersebut.
--- Gunakan ini jika Anda ingin memulai database dari kondisi bersih total.
 DROP TABLE IF EXISTS `profil_kota`;
 DROP TABLE IF EXISTS `layanan`;
 DROP TABLE IF EXISTS `galeri`;
@@ -45,18 +43,18 @@ INSERT INTO `profil_kota` (
     `kepala_keluarga`,
     `lahan_pertanian`
 ) VALUES (
-    'Kota Contoh',
-    'Provinsi Contoh',
-    '12345',
-    '150 km²',
-    '1.200.000 jiwa',
-    'Menjadikan Kota Contoh sebagai kota yang berdaya saing, inovatif, dan sejahtera dengan menjunjung tinggi nilai-nilai budaya dan lingkungan.',
+    'Kota Purwokerto',
+    'Provinsi Jawa Tengah',
+    '53116',
+    '41,65 km²',
+    '236.162 Jiwa',
+    'Menjadikan Kota Purwokerto sebagai kota yang berdaya saing, inovatif, dan sejahtera dengan menjunjung tinggi nilai-nilai budaya dan lingkungan.',
     '- Meningkatkan kualitas pelayanan publik. \n- Mengembangkan ekonomi lokal berbasis potensi daerah. \n- Melestarikan budaya dan lingkungan hidup. \n- Meningkatkan partisipasi masyarakat dalam pembangunan.',
-    'Kota Contoh memiliki sejarah panjang yang kaya, dimulai dari sebuah pemukiman kecil di tepi sungai X pada abad ke-17. Berkembang menjadi pusat perdagangan rempah, kota ini memainkan peran penting dalam era kolonial. Setelah kemerdekaan, Kota Contoh bertransformasi menjadi pusat industri dan pendidikan. Hingga kini, kota ini terus berinovasi sambil tetap menjaga warisan budayanya.',
-    '1.200.000',
-    '150.00 Ha',
-    '300.000',
-    '50.00 Ha'
+    'Kota Purwokerto memiliki sejarah panjang yang kaya, dimulai dari sebuah pemukiman kecil di tepi sungai X pada abad ke-17. Berkembang menjadi pusat perdagangan rempah, kota ini memainkan peran penting dalam era kolonial. Setelah kemerdekaan, Kota Contoh bertransformasi menjadi pusat industri dan pendidikan. Hingga kini, kota ini terus berinovasi sambil tetap menjaga warisan budayanya.',
+    ' 231.765',
+    '41,65 km²',
+    '64.156',
+    '1.500 ha'
 );
 
 
@@ -95,10 +93,11 @@ CREATE TABLE `galeri` (
 --
 -- Dumping Data untuk Tabel `galeri`
 --
+-- PATH GAMBAR DI SINI DISESUAIKAN DENGAN public/assets/img/
 INSERT INTO `galeri` (`nama_tempat`, `deskripsi`, `gambar_url`) VALUES
-('Taman Kota Indah', 'Tempat rekreasi keluarga yang asri dengan berbagai fasilitas.', 'img/taman_kota.jpg'),
-('Pusat Perbelanjaan Modern', 'Mall terbesar di kota dengan beragam toko dan hiburan.', 'img/mall_modern.jpg'),
-('Masjid Agung', 'Salah satu ikon kota dengan arsitektur yang megah.', 'img/masjid_agung.jpg');
+('Taman Kota Indah', 'Tempat rekreasi keluarga yang asri dengan berbagai fasilitas.', 'public/assets/img/taman_kota.jpg'),
+('Pusat Perbelanjaan Modern', 'Mall terbesar di kota dengan beragam toko dan hiburan.', 'public/assets/img/mall_modern.jpg'),
+('Masjid Agung', 'Salah satu ikon kota dengan arsitektur yang megah.', 'public/assets/img/masjid_agung.jpg');
 
 
 --
@@ -118,7 +117,7 @@ CREATE TABLE `kontak` (
 -- Dumping Data untuk Tabel `kontak`
 --
 INSERT INTO `kontak` (`id`, `alamat`, `telepon`, `email`, `jam_layanan`, `link_lokasi`) VALUES
-(1, 'Jl. Merdeka No. 1, Kota Contoh, Provinsi Contoh, 12345', '(021) 1234567', 'info@kotacontoh.go.id', 'Senin - Jumat: 08:00 - 16:00 WIB\nJumat: 08:00 - 11:30 WIB\nSabtu - Minggu: Libur', 'https://www.google.com/maps/search/?api=1&query=-7.424404334689062,109.23015814827018');
+(1, 'Jl. Merdeka No. 1, Kota Purwokerto, Provinsi Jawa Tengah, 50142', '081212431499', 'srafly310@gmail.com', 'Senin - Jumat: 08:00 - 16:00 WIB\nJumat: 08:00 - 11:30 WIB\nSabtu - Minggu: Libur', 'https://www.google.com/maps/search/?api=1&query=-7.424404334689062,109.23015814827018');
 
 
 --
@@ -165,7 +164,5 @@ CREATE TABLE `admin_users` (
 -- Dumping Data untuk Tabel `admin_users`
 --
 -- PENTING: Hash di bawah ini adalah untuk password 'admin123'.
--- Jika Anda ingin mengganti password, buat hash baru dengan password_hash('password_baru_anda', PASSWORD_DEFAULT) di PHP
--- dan ganti string hash di bawah ini.
 INSERT INTO `admin_users` (`username`, `password`, `email`) VALUES
 ('admin', '$2y$10$wT0vV7e.lT/B3Rj.n4P68.u2u0o1a3b4c5d6e7f8g9h0i1j2k3l4m5n6o7p8q9r0s1t', 'admin@example.com');
